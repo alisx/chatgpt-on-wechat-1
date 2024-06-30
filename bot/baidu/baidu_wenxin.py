@@ -28,6 +28,8 @@ class BaiduWenxinBot(Bot):
                 wenxin_model = "completions_pro"
 
         self.sessions = SessionManager(BaiduWenxinSession, model=wenxin_model)
+        print("BAIDU_API_KEY:", BAIDU_API_KEY)
+        print("BAIDU_SECRET_KEY:", BAIDU_SECRET_KEY)
 
     def reply(self, query, context=None):
         # acquire reply content
@@ -110,6 +112,6 @@ class BaiduWenxinBot(Bot):
         使用 AK，SK 生成鉴权签名（Access Token）
         :return: access_token，或是None(如果错误)
         """
-        url = "https://aip.baidubce.com/oauth/2.0/token"
+        url = "https://api.baidubce.com/oauth/2.0/token"
         params = {"grant_type": "client_credentials", "client_id": BAIDU_API_KEY, "client_secret": BAIDU_SECRET_KEY}
         return str(requests.post(url, params=params).json().get("access_token"))

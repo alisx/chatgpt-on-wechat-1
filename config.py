@@ -69,6 +69,10 @@ available_setting = {
     "baidu_wenxin_model": "eb-instant",  # 默认使用ERNIE-Bot-turbo模型
     "baidu_wenxin_api_key": "",  # Baidu api key
     "baidu_wenxin_secret_key": "",  # Baidu secret key
+    # Baidu 千帆参数
+    "baidu_qianfan_model": "ERNIE-Bot-4",
+    "baidu_qianfan_secret_key": "",
+    "baidu_qianfan_access_key": "",
     # 讯飞星火API
     "xunfei_app_id": "",  # 讯飞应用ID
     "xunfei_api_key": "",  # 讯飞 API key
@@ -184,6 +188,7 @@ class Config(dict):
         if d is None:
             d = {}
         for k, v in d.items():
+            print(k, v)
             self[k] = v
         # user_datas: 用户数据，key为用户名，value为用户数据，也是dict
         self.user_datas = {}

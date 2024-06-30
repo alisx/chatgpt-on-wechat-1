@@ -30,6 +30,8 @@ class Bridge(object):
                 self.btype["chat"] = const.CHATGPTONAZURE
             if model_type in ["wenxin", "wenxin-4"]:
                 self.btype["chat"] = const.BAIDU
+            if model_type in ["qianfan"]:
+                self.btype["chat"] = const.QIANFAN
             if model_type in ["xunfei"]:
                 self.btype["chat"] = const.XUNFEI
             if model_type in [const.QWEN]:

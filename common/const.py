@@ -1,7 +1,8 @@
 # bot_type
 OPEN_AI = "openAI"
 CHATGPT = "chatGPT"
-BAIDU = "baidu"  # 百度文心一言模型
+WENXIN = "wenxin"  # 百度文心一言模型
+QIANFAN = "qianfan" # 百度千帆模型
 XUNFEI = "xunfei"
 CHATGPTONAZURE = "chatGPTOnAzure"
 LINKAI = "linkai"
