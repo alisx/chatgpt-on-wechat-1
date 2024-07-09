@@ -279,10 +279,17 @@ class ChatChannel(Channel):
                     {"channel": self, "context": context, "reply": reply},
                 )
             )
+            replys = []
             reply = e_context["reply"]
-            if not e_context.is_pass() and reply and reply.type:
-                logger.debug("[chat_channel] ready to send reply: {}, context: {}".format(reply, context))
-                self._send(reply, context)
+            if not isinstance(reply, list):
+                replys.append(reply)
+            else:
+                replys = reply
+            for r in replys:
+                if not e_context.is_pass() and r and r.type:
+                    logger.debug("[WX] ready to send reply: {}, context: {}".format(r, context))
+                    self._send(r, context)
+                    time.sleep(1)
 
     def _send(self, reply: Reply, context: Context, retry_cnt=0):
         try:

@@ -81,6 +81,7 @@ class WechatMessage(ChatMessage):
                           itchat_msg["ToUserName"] != itchat_msg["FromUserName"]
             self.other_user_id = itchat_msg["User"]["UserName"]
             self.other_user_nickname = itchat_msg["User"]["NickName"]
+            self.other_user_remarkname = itchat_msg["User"]["RemarkName"]
             if self.other_user_id == self.from_user_id:
                 self.from_user_nickname = self.other_user_nickname
             if self.other_user_id == self.to_user_id:
